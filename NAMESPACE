@@ -1,0 +1,8 @@
+exportPattern("^[[:alpha:]]+")
+importFrom("methods", "new")
+importFrom("stats", "coefficients", "dnorm", "lm", "mad", "median", "predict", "quantile", "resid", "sd")
+importFrom("flexmix", "flexmix","posterior","refit","parameters")
+#importFrom("robust","lmRob","lmRob.control")
+importFrom("robustbase", "lmrob","lmrob.control")
+importFrom("gtools","permutations")
+importFrom("MASS", "ginv")
