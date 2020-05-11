@@ -1,15 +1,31 @@
 # Robust Mixture Regression
-r package
+
+* **License:** [![License](http://img.shields.io/badge/license-GPL%20v3-orange.svg?style=flat)](http://www.gnu.org/licenses/gpl-3.0.en.html)
+* **Download:** ![Download](https://cranlogs.r-pkg.org/badges/RobMixReg)
+
+[r package link](https://CRAN.R-project.org/package=RobMixReg) [https://CRAN.R-project.org/package=RobMixReg]
+
+[manual document](https://CRAN.R-project.org/package=RobMixReg/RobMixReg.pdf) [https://CRAN.R-project.org/package=RobMixReg/RobMixReg.pdf]
 
 ### Robust Mixture Regression Plot (with outliers)
-<p align="center">
-  <img width="400"  src="https://github.com/changwn/RobMixReg/blob/master/pic1.png">
-</p>
+![[line1]](pic1.png)
+
 
 ### Add Regresseion Line
-<p align="center">
-  <img width="350"  src="https://github.com/changwn/RobMixReg/blob/master/pic2.png">
-</p>
+![[line2]](pic2.png)
+
+# News
+2020-02-25 
+
+* version 0.1.0 released
+
+2020-05-10
+
+* Update CTLE function to CTLERob function.
+This new function have one more parameter 'rlr_method' which let user choose the robust regression method in 'lmRob','lmrob','ltsReg'.
+
+* Update class definition of RobMixReg.
+The new class add one slot which return the posterior probability of the mixture regression.
 
 # Install from CRAN
 ```
