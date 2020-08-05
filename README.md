@@ -15,24 +15,8 @@
 <!-- badges: end -->
 <!--   ![Download](https://cranlogs.r-pkg.org/badges/RobMixReg)   -->
 
-[r package link](https://CRAN.R-project.org/package=RobMixReg) [https://CRAN.R-project.org/package=RobMixReg]
-
-[manual document](https://CRAN.R-project.org/package=RobMixReg/RobMixReg.pdf) [https://CRAN.R-project.org/package=RobMixReg/RobMixReg.pdf]
-
-[Paper download here:](https://arxiv.org/abs/2005.11599) [<Wennan Chang et al. , A New Algorithm using Component-wise Adaptive Trimming For Robust Mixture Regression, arxiv, 2020>](https://arxiv.org/abs/2005.11599)
-
-[Wennan Chang](https://changwn.github.io/), [Chi Zhang\* ](https://zcslab.github.io/), [Sha Cao\* ](https://medicine.iu.edu/faculty/38873/cao-sha)
-
-[Biomedical Data Research Lab (BDR)](https://zcslab.github.io/) 
-
-[For other software, please refer to the BDR github page](https://github.com/zcslab)
 
 
-
-
-# News
-
-The package version control is in [News.md](https://changwn.github.io/RobMixReg/news/index.html)
 
 # Install from CRAN
 ```
@@ -51,6 +35,12 @@ devtools::install_github("changwn/RobMixReg")
 
 A comprehensive and complete tutorial is [here](https://changwn.github.io/RobMixReg/articles/tutorial.html).
 
+# News
+
+The package version control is in [News.md](https://changwn.github.io/RobMixReg/news/index.html)
+
+
+
 ## Citations
 If you find the code helpful in your resarch or work, please cite us.
 ```BibTex
@@ -58,6 +48,13 @@ If you find the code helpful in your resarch or work, please cite us.
   title={A New Algorithm using Component-wise Adaptive Trimming For Robust Mixture Regression},
   author={Chang, Wennan and Wan, Changlin and Zhou, Xinyu and Zhang, Chi and Cao, Sha},
   journal={arXiv preprint arXiv:2005.11599},
+  year={2020}
+}
+
+@article{chang2020supervised,
+  title={Supervised clustering of high dimensional data using regularized mixture modeling},
+  author={Chang, Wennan and Wan, Changlin and Zang, Yong and Zhang, Chi and Cao, Sha},
+  journal={arXiv preprint arXiv:2007.09720},
   year={2020}
 }
 ```
@@ -69,18 +66,6 @@ If you have any questions or problems, please feel free to open a new issue [her
 - [Wennan Chang](https://changwn.github.io/)
 (wnchang@iu.edu)
 
-PhD candidate at BDR group, Indiana University School of Medicine
+PhD candidate at [Biomedical Data Research Lab (BDRL)](https://zcslab.github.io/) , Indiana University School of Medicine
 
-- [Sha Cao](https://medicine.iu.edu/faculty/38873/cao-sha/)
-(shacao@iu.edu)
 
-Assistant Professor
-
-Department of Biostatistics, Indiana University School of Medicine
-
-# Contributing
-
-I’m happy to receive bug reports, suggestions, questions, and (most of
-all) contributions to fix problems and add features. I prefer you use
-the Github issues system over trying to reach out to me in other ways.
-Pull requests for contributions are encouraged.

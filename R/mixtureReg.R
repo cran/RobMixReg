@@ -29,7 +29,7 @@ mixtureReg <- function(regData, formulaList,
                        initialWList = NULL,
                        epsilon = 1e-08, max_iter = 10000, max_restart = 15,
                        min_lambda = 0.01, min_sigmaRatio = 0.1,
-                       silently = FALSE
+                       silently = TRUE
 ) {
   if(is.null(yName)) {yName = all.vars(formulaList[[1]])[1]}
   if(is.null(xName)) {xName = all.vars(formulaList[[1]])[2]}
@@ -310,25 +310,42 @@ plot_mixtureReg <- function(mixtureModel, which = 1:2,
   YhatList = lapply(X = mixtureModel$lmList, FUN = function(x) predict(x))
 
   if (which == 1) {
-    pt_color = rep('grey', length(XX))
+    pt_color = rep('grey60', length(XX))
     for (i in 1:length(mixtureModel$lmList)) {
       ind_loca = which(mixtureModel$posterior[[i]] > mixtureModel$prior[[i]])
-      pt_color[ind_loca] = c("pink","lightblue","yellow","green")[i]
+      pt_color[ind_loca] = c("dodgerblue","gold","greenyellow","darkorchid1","darkorange")[i]
     }
     plot(x = XX, y = YY, xlab = xlab, ylab = ylab, pch=19, col = alpha(pt_color, 0.9),main="Mixture Regression", ...)
     for (i in 1:length(mixtureModel$lmList)) {
-      orderedLines(x = XX, y = YhatList[[i]], col = c("pink","lightblue","yellow","green")[i])
+      # orderedLines(x = XX, y = YhatList[[i]], col = c("dodgerblue","gold","greenyellow","darkorchid1","darkorange")[i])
+      orderedLines(x = XX, y = YhatList[[i]], col = 'darkslategrey')
     }
   }
 
   if (which == 2) {
     for (i in 1:length(mixtureModel$lmList)) {
-      plot(x = XX, y = mixtureModel$posterior[[i]],
-           xlab = xlab, ylab = paste0("Weights_", i),
-           ylim = c(-0.01,1.01),
-           pch=19, col = 'grey', main='Posterior',
-           ...)
-      orderedLines(x = XX, y = mixtureModel$prior[[i]], col = c("pink","lightblue","yellow","green")[i])
+      #chg col----
+      mycol=rep('grey', length(XX));
+      # loca=which(mixtureModel$posterior[[i]] >= mixtureModel$prior[[i]]);
+      # mycol[loca]='olivedrab1' ;
+      ynew = mixtureModel$posterior[[i]]
+      ynew = ynew[order(ynew)]
+      loca=which(ynew >= mixtureModel$prior[[i]]);
+      mycol[loca]='olivedrab1'
+      #chg col end---
+      #chg order ---
+      ynew = mixtureModel$posterior[[i]]
+      ynew = ynew[order(ynew)]
+      plot(x=1:length(ynew),y=ynew,xlab=xlab,ylab='Posterior',ylim=c(-0.01,1.01),pch=19,
+           main=paste0("Component_", i),col=mycol,...)
+      #chg order end--
+      # plot(x = XX, y = mixtureModel$posterior[[i]],
+      #      xlab = xlab, ylab = 'Posterior',
+      #      ylim = c(-0.01,1.01),
+      #      pch=19, main=paste0("Component_", i),col = mycol,#'grey',
+      #      ...)
+      # orderedLines(x = XX, y = mixtureModel$prior[[i]], col = c("dodgerblue","gold","greenyellow","darkorchid1","darkorange")[i])
+      abline(h=mixtureModel$prior[[i]], col = c("dodgerblue","gold","greenyellow","darkorchid1","darkorange")[i])
     }
   }
 }
